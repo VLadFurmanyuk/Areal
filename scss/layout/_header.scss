@@ -1,0 +1,270 @@
+// header
+.header{
+  &-top{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $bg-black100;
+    &__container{
+      display: flex;
+      justify-content: space-between;
+      &__left{
+        display: flex;
+        align-items: center;
+        .mode-text{
+          font-family: $font-proxima;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: $color-white;
+          margin-left: 13px;
+        }
+      }
+      &__right{
+        a{
+          font-family: $font-proxima;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          color: $color-white;
+          transition: color .3s ease-in-out;
+          &:not(:first-child){
+            margin-left: 40px;
+          }
+          &:hover{
+            color: $color-gray;
+          }
+        }
+      }
+    }
+  }
+  &-bottom{
+    padding-top: 13px;
+    padding-bottom: 12px;
+    &__container{
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__logo{
+        display: flex;
+        align-items: center;
+        img{
+
+        }
+        h2{
+          font-family: $font-proxima;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 34px;
+          letter-spacing: -0.02em;
+          color: $color-black100;
+          margin-left: 11px;
+        }
+      }
+      nav{
+        ul{
+          li{
+            display: inline;
+            padding-bottom: 5px;
+            &:not(:first-child){
+              margin-left: 55px;
+            }
+            &:hover{
+              a:before{
+                width: 100%;
+                left: 0;
+              }
+              .submenu{
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+            a{
+              font-family: $font-proxima;
+              font-style: normal;
+              font-weight: 300;
+              font-size: 16px;
+              line-height: 19px;
+              color: $color-black100;
+              display: inline;
+              position: relative;
+              height: 100%;
+              &:before{
+                content: '';
+                background-color: $bg-red100;
+                position: absolute;
+                right: 0;
+                height: 3px;
+                bottom: -5px;
+                width: 0%;
+                transition: all .3s ease-in-out;
+              }
+              &.submenu-btn{
+                &::after{
+                  content: url("../../images/header/submenu/submenu-arrow.png");
+                  position: absolute;
+                  right: -21px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+              }
+            }
+            svg{
+
+            }
+          }
+        }
+      }
+      .submenu{
+        width: 100%;
+        background: $bg-white100;
+        border: 1px solid $bg-white200;
+        box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.05);
+        border-radius: 20px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        border-radius: 5px;
+        padding: 52px 106px 54px 90px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .3s ease-in-out;
+
+        display: flex;
+        justify-content: space-between;
+        nav{
+          h3{
+            font-family: $font-proxima;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: $color-gray100;
+            padding-bottom: 6px;
+            position: relative;
+            &:after{
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 1px;
+              width: 120px;
+              background-color: $bg-gray100;
+            }
+          }
+          ul{
+            margin-top: 10px;
+            li{
+              display: block;
+              &:not(:first-child){
+                margin-top: 10px;
+                margin-left: 0;
+              }
+              &:hover{
+                a{
+                  //font-weight: 600;
+                  color: $color-red;
+                  text-shadow: 0 0 .65px $color-red, 0 0 .65px $color-red;
+                }
+              }
+              a{
+                font-family: $font-proxima;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 150%;
+                color: $color-black100;
+                display: block;
+                transition: all .3s ease-in-out;
+                &:before{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__login{
+        display: flex;
+        align-items: center;
+        p{
+          font-family: $font-proxima;
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 19px;
+          color: $color-black200;
+          margin-right: 9px;
+        }
+        img{
+
+        }
+      }
+    }
+  }
+}
+
+// SWITCH BUTTON
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bg-white100;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  width: 18px;
+  height: 18px;
+  left: 1px;
+  top: 1px;
+  background-color: $bg-red100;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $bg-gray;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(17px);
+  -ms-transform: translateX(17px);
+  transform: translateX(17px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
