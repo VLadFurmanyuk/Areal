@@ -567,16 +567,17 @@ input:checked + .slider:before {
 .main__container__content button:hover {
   background-position: 0;
 }
-.main__container__content button:hover svg {
+.main__container__content button:hover img {
   -webkit-animation: arrowAnimation 2s ease-in-out infinite;
           animation: arrowAnimation 2s ease-in-out infinite;
 }
 .main__container__content button img {
+  width: 21.88px;
+  height: 14.06px;
   position: absolute;
+  top: 22px;
   right: 38px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  fill: #ffffff;
 }
 .main__container__content button svg {
   width: 21.88px;

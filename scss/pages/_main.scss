@@ -53,15 +53,19 @@
       transition: background .5s ease-in-out;
       &:hover{
         background-position: 0;
-        svg{
+        img{
           animation: arrowAnimation 2s ease-in-out infinite;
         }
       }
       img{
+        width: 21.88px;
+        height: 14.06px;
         position: absolute;
+        top: 22px;
+        //top: 50%;
+        //transform: translateY(-50%);
         right: 38px;
-        top: 50%;
-        transform: translateY(-50%);
+        fill: $bg-white;
       }
       svg{
         width: 21.88px;
